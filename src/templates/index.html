@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hate Text classification Module </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 100px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .input-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .output-container textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+            <h1 class="title">Hate Text classification Module</h1>
+            <form action="{{ url_for('Detect') }}"method="post">
+            <div class="input-container">
+                <input type="text" id="src" placeholder="Enter the  text..." name="src">
+                <input type="submit" value="Check">
+            </div>
+            <div class="output-container">
+                <textarea id="output" placeholder="" >{{prediction}}</textarea>
+            </div>
+            </form>
+    </div>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Translation</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename="styles.css")}}>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">TRANSFORMER BASED MONOLINGUAL NEURAL MACHINE TRANSLATION FOR TAMIL</h1>
+        <div class="input-container">
+            <input type="text" id="src" placeholder="Enter English text..." name="src">
+            <input type="submit" value="Submit">
+        </div>
+        <div class="output-container">
+            <textarea id="output" placeholder="Translated Tamil text will appear here..." >{{prediction}}</textarea>
+        </div>
+    </div>
+</body>
+</html>-->
